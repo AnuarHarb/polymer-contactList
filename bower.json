@@ -1,9 +1,11 @@
 {
   "name": "polymer-contacts",
-  "description": "A contact list application excercise to use polymer and custom elements.",
+  "description": "A contact list application exercise to use polymer and custom elements.",
   "main": "index.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "app-layout": "PolymerElements/app-layout#^2.0.1",
+    "paper-card": "PolymerElements/paper-card#^2.0.0"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",

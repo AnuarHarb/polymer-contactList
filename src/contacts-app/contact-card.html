@@ -1,0 +1,28 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+
+<dom-module id="contact-card">
+  <template>
+    <style>
+    </style>
+
+  </template>
+  <script>
+    (function contactCard(customElements) {
+      'use strict';
+
+      class contactCard extends Polymer.Element{
+        static get is() {
+          return 'contact-card';
+        }
+        static get properties() {
+          return {
+
+          };
+        }
+        
+      }
+      window.customElements.define(contactCard.is, contactCard)
+    })(window.customElements)
+  </script>
+
+</dom-module>
