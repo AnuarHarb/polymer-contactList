@@ -23,13 +23,12 @@
         height: 100%;
       }
       paper-icon-button {
-        border: 1px solid black;
         color: gray;
         bottom: 130px;
       }
     </style>
       <section>
-        <paper-icon-button icon="favorite" on-click="_changeModalLeft"></paper-icon-button>
+        <paper-icon-button icon="arrow-back" on-click="_changeModalLeft"></paper-icon-button>
         <paper-card>
           <template is="dom-repeat" items="[[imagesList]]" as="imageSrc">
             <template is="dom-if" if="[[_isEqual(activeImg, index)]]">
@@ -37,7 +36,7 @@
             </template>
           </template>
         </paper-card>
-        <paper-icon-button icon="favorite" on-click="_changeModalRight"></paper-icon-button>
+        <paper-icon-button icon="arrow-forward" on-click="_changeModalRight"></paper-icon-button>
       </section>
   </template>
   <script>

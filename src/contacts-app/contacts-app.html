@@ -29,6 +29,10 @@
     paper-icon-button {
       --paper-icon-button-ink-color: white;
     }
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+    }
     app-drawer-layout:not([narrow]) [drawer-toggle] {
       display: none;
     }
@@ -56,7 +60,7 @@
         <app-header slot="header" reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-            <div main-title>POLYMER CONTACTS</div>
+            <div class="title" main-title>POLYMER CONTACTS</div>
           </app-toolbar>
         </app-header>
         <contact-panel active-contact="[[activeContact]]" on-info-updated="_updateContact"></contact-panel>
@@ -133,7 +137,7 @@
           this.newContact.imagesList = ['/img/contact-woman.jpg'];
           this.newContact.activeImg = 0;
           this.push('contactList', this.newContact);
-          this.activeContact = this.contactList[this.contactList.length - 1]
+          this.activeContact = this.contactList[this.contactList.length - 1];
           this.$.name.value = "";
           this.$.phone.value = "";
           this.$.dialog.close();
@@ -142,18 +146,17 @@
           this.activeContact = this.contactList[event.target.contactId];
         }
         _updateContact(event) {
-          this.set(`contactList.` + this.activeContact.id + `.name`, event.detail.name)
-          this.set(`contactList.` + this.activeContact.id + `.phone`, event.detail.phone)
-          this.set(`contactList.` + this.activeContact.id + `.address`, event.detail.address)
-          this.set(`contactList.` + this.activeContact.id + `.work`, event.detail.work)
-          this.set(`contactList.` + this.activeContact.id + `.gender`, event.detail.gender)
-          console.log(this.contactList[0])
+          this.set(`contactList.${this.activeContact.id}.name`, event.detail.name);
+          this.set(`contactList.` + this.activeContact.id + `.phone`, event.detail.phone);
+          this.set(`contactList.` + this.activeContact.id + `.address`, event.detail.address);
+          this.set(`contactList.` + this.activeContact.id + `.work`, event.detail.work);
+          this.set(`contactList.` + this.activeContact.id + `.gender`, event.detail.gender);
           // TODO this set to active contact only works with the first demo contact
-          this.set('activeContact', this.contactList[this.activeContact.id])
+          this.set('activeContact', this.contactList[this.activeContact.id]);
         }
       }
 
-      window.customElements.define(ContactsApp.is, ContactsApp);
+      customElements.define(ContactsApp.is, ContactsApp);
     })(window.customElements);
   </script>
 </dom-module>
